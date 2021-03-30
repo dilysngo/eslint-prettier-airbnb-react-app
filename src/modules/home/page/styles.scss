@@ -1,14 +1,15 @@
-@import "assets/css/variables.scss";
+@import 'assets/css/variables.scss';
 
 .home-container {
-}
-
-.rule-1 {
-  display: block;
-  background: #f7d161;
-  height: 2px;
-  max-width: 67rem;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 3rem;
+  height: 100%;
+  background-color: #333;
+  h1 {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+  }
 }

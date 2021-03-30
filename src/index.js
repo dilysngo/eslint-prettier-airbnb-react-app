@@ -7,7 +7,6 @@ import App from './App';
 import configureStore from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
-import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {};
