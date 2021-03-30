@@ -91,6 +91,9 @@ module.exports = {
         aspects: ['invalidHref'],
       },
     ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-unresolved': 'off',
+    'no-empty': 'warn',
+    'import/order': 'off',
   },
 };
