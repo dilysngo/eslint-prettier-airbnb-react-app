@@ -1,0 +1,11 @@
+{
+  "required": "Required",
+
+  "header.home": "Home",
+  "header.trade": "Trade",
+  "header.farms": "Farms",
+  "header.stake": "Stake",
+  "header.info": "Info",
+
+  "wallet.actions.submit": "Confirm transaction"
+}

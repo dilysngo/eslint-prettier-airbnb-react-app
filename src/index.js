@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './App';
+import configureStore from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
+import './index.css';
+import 'react-toastify/dist/ReactToastify.css';
+
+const initialState = {};
+const store = configureStore(initialState);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );
 

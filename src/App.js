@@ -1,19 +1,43 @@
-import logo from './logo.svg';
+import 'assets/css/global.scss';
 import './App.css';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
+import { ToastContainer } from 'react-toastify';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
+import { HomePage } from 'modules/home';
+
+import messagesEn from 'translations/en.json';
+import messagesVi from 'translations/vi.json';
+
+const messages = {
+  en: messagesEn,
+  vi: messagesVi,
+};
+
+const LANGUAGE = 'lang';
+const languageLocal = localStorage.getItem(LANGUAGE);
+const languageBrowser = navigator.language.split(/[-_]/)[0];
 
 function App() {
+  const dispatch = useDispatch();
+  const language = languageLocal || languageBrowser;
+
+  useEffect(() => {}, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer />
+      <IntlProvider locale={language} messages={messages[language]}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+          </Switch>
+        </Router>
+      </IntlProvider>
+    </>
   );
 }
 
